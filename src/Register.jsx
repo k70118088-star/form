@@ -229,9 +229,9 @@ const Register = () => {
           )}
         </button>
         <p className="text-[#41576D] text-center text-base font-normal mt-3 opacity-80">
-          Already a member?{" "}
+          Already a member?
           <span className=" text-[#112D49] underline decoration-1 decoration-[#112D49]">
-            {" "}
+           
             <Link to="/login">Log in</Link>
           </span>
         </p>
