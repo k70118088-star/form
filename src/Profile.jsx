@@ -78,7 +78,7 @@ const Profile = () => {
                   type="text"
                   value={user.firstName}
                   readOnly
-                  className="w-full border-2 border-[#858585] rounded-lg p-3 bg-gray-50"
+                  className="w-full border-2 border-[#858585] text-[#858585] rounded-lg p-3 bg-gray-50"
                 />
               </div>
 
@@ -88,7 +88,7 @@ const Profile = () => {
                   type="text"
                   value={user.lastName}
                   readOnly
-                  className="w-full border-2 border-[#858585] rounded-lg p-3 bg-gray-50"
+                  className="w-full border-2 border-[#858585] text-[#858585] rounded-lg p-3 bg-gray-50"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ const Profile = () => {
                 type="email"
                 value={user.email}
                 readOnly
-                className="w-full border-2 border-[#858585] rounded-lg p-3 bg-gray-50"
+                className="w-full border-2 border-[#858585] text-[#858585] rounded-lg p-3 bg-gray-50"
               />
             </div>
 
@@ -111,7 +111,7 @@ const Profile = () => {
                   type={showPassword ? "text" : "password"}
                   value={user.password}
                   readOnly
-                  className="w-full border-2 border-[#858585] rounded-lg p-3 bg-gray-50 pr-16"
+                  className="w-full border-2 border-[#858585] text-[#858585] rounded-lg p-3 bg-gray-50 pr-16"
                 />
 
                 <button
