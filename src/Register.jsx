@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link , useNavigate} from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formDetails, setFormDetails] = useState({
@@ -17,22 +16,18 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
- 
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-const handleImageUpload = (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
+    const imageUrl = URL.createObjectURL(file);
 
-  const imageUrl = URL.createObjectURL(file);
-
-  setFormDetails({
-    ...formDetails,
-    profileImage: imageUrl,
-  });
-};
-
-
+    setFormDetails({
+      ...formDetails,
+      profileImage: imageUrl,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +36,7 @@ const handleImageUpload = (e) => {
     const storedUsers = JSON.parse(localStorage.getItem("userData")) || [];
 
     const emailExists = storedUsers.some(
-      (user) => user.email === formDetails.email,
+      (user) => user.email === formDetails.email
     );
 
     setEmailExistsError(emailExists);
@@ -71,7 +66,7 @@ const handleImageUpload = (e) => {
 
       setTimeout(() => {
         setLoading(false);
-         navigate("/login")
+        navigate("/login");
       }, 2000);
     }
   };
@@ -83,7 +78,10 @@ const handleImageUpload = (e) => {
         className="bg-white p-6 rounded-xl shadow-lg w-96"
       >
         <h2 className="text-2xl font-bold text-center mb-1">Sign up</h2>
-        <p className="text-[#112D49] text-center mb-4">Create your account to unlock access and stay updated with everything we offer.</p>
+        <p className="text-[#112D49] text-center mb-4">
+          Create your account to unlock access and stay updated with everything
+          we offer.
+        </p>
 
         <div className="flex flex-col items-center mb-4">
           <div className="w-84 p-2 h-40 rounded-lg bg-gray-200 overflow-hidden  mb-2">
@@ -230,7 +228,13 @@ const handleImageUpload = (e) => {
             "Register"
           )}
         </button>
-        <p className="text-[#41576D] text-center text-base font-normal mt-3 opacity-80">Already a member? <span className=" text-[#112D49] underline decoration-1 decoration-[#112D49]"> <Link to="/login">Log in</Link></span></p>
+        <p className="text-[#41576D] text-center text-base font-normal mt-3 opacity-80">
+          Already a member?{" "}
+          <span className=" text-[#112D49] underline decoration-1 decoration-[#112D49]">
+            {" "}
+            <Link to="/login">Log in</Link>
+          </span>
+        </p>
       </form>
     </div>
   );
