@@ -21,8 +21,6 @@ const Profile = () => {
     navigate("/register");
   };
 
-  
-
   return (
     <div className="min-h-screen bg-gray-100">
       {user && (

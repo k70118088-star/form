@@ -20,21 +20,19 @@ const Register = () => {
  
 
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+const handleImageUpload = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
 
-    const reader = new FileReader();
+  const imageUrl = URL.createObjectURL(file);
 
-    reader.onloadend = () => {
-      setFormDetails({
-        ...formDetails,
-        profileImage: reader.result,
-      });
-    };
+  setFormDetails({
+    ...formDetails,
+    profileImage: imageUrl,
+  });
+};
 
-    reader.readAsDataURL(file);
-  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
